@@ -17,12 +17,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.isaka.todoapp.R
-import com.isaka.todoapp.ui.theme.SecondaryDark
+import com.isaka.todoapp.ui.theme.Tertiary
 
 @Composable
 fun EmptyContent() {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -30,12 +31,12 @@ fun EmptyContent() {
         Icon(
             modifier = Modifier.size(122.dp),
             painter = painterResource(id = R.drawable.ic_sad_face),
-            tint = SecondaryDark,
+            tint = Tertiary.copy(alpha = 0.3f),
             contentDescription = null
         )
         Text(
             text = stringResource(id = R.string.empty_content),
-            color = SecondaryDark,
+            color = Tertiary.copy(alpha = 0.3f),
             fontWeight = FontWeight.Bold,
             fontSize = MaterialTheme.typography.bodyLarge.fontSize
         )

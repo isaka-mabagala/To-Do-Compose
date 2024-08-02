@@ -57,7 +57,7 @@ fun PriorityDropDown(
             .height(DROP_DOWN_HEIGHT)
             .border(
                 width = 1.dp,
-                color = MaterialTheme.colors.surface,
+                color = MaterialTheme.colors.onSurface,
                 shape = MaterialTheme.shapes.medium
             )
             .clickable { expanded = true },

@@ -101,7 +101,10 @@ fun DefaultAppBar(
             )
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            MaterialTheme.colorScheme.primaryContainer
+            containerColor = MaterialTheme.colorScheme.primary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimary,
+            actionIconContentColor = MaterialTheme.colorScheme.onPrimary,
+            navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
         ),
     )
 }
@@ -228,7 +231,7 @@ fun SearchAppBar(
         modifier = Modifier
             .fillMaxWidth()
             .height(88.dp)
-            .background(color = MaterialTheme.colorScheme.primaryContainer),
+            .background(color = MaterialTheme.colorScheme.primary),
         verticalArrangement = Arrangement.Bottom
     ) {
         TextField(
@@ -280,10 +283,20 @@ fun SearchAppBar(
                 }
             ),
             colors = TextFieldDefaults.colors(
+                unfocusedContainerColor = Color.Transparent,
                 focusedContainerColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
+                cursorColor = MaterialTheme.colorScheme.onPrimary,
+                focusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary,
+                unfocusedPlaceholderColor = MaterialTheme.colorScheme.onPrimary,
+                focusedLeadingIconColor = MaterialTheme.colorScheme.onPrimary,
+                unfocusedLeadingIconColor = MaterialTheme.colorScheme.onPrimary,
+                focusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                unfocusedTrailingIconColor = MaterialTheme.colorScheme.onPrimary,
+                focusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary
             )
         )
     }

@@ -5,6 +5,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -16,7 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.isaka.todoapp.ui.viewmodels.SharedViewModel
 import com.isaka.todoapp.util.Action
 import kotlinx.coroutines.time.delay
@@ -117,13 +118,16 @@ fun DisplaySnackBar(
 
 @Composable
 fun ListFab(onFabClicked: (Int) -> Unit) {
-    FloatingActionButton(onClick = {
-        onFabClicked(-1)
-    }) {
+    FloatingActionButton(
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary,
+        onClick = {
+            onFabClicked(-1)
+        }
+    ) {
         Icon(
             imageVector = Icons.Filled.Add,
-            contentDescription = null,
-            tint = Color.White
+            contentDescription = null
         )
     }
 }
@@ -141,4 +145,10 @@ private fun setActionLabel(action: Action): String {
     } else {
         "OK"
     }
+}
+
+@Composable
+@Preview
+fun ListFabPreview() {
+    ListFab(onFabClicked = {})
 }

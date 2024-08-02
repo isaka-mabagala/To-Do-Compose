@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import com.isaka.todoapp.data.models.Priority
 import com.isaka.todoapp.ui.theme.LARGE_PADDING
@@ -26,6 +27,7 @@ fun PriorityItem(priority: Priority) {
         Text(
             modifier = Modifier.padding(start = LARGE_PADDING),
             text = priority.name,
+            style = MaterialTheme.typography.caption1
         )
     }
 }
