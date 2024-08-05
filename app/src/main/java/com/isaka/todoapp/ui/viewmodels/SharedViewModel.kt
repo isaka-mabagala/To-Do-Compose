@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-  @HiltViewModel
+@HiltViewModel
 class SharedViewModel @Inject constructor(
     private val repository: ToDoRepository,
     private val appSettings: SettingsStore
@@ -53,7 +53,6 @@ class SharedViewModel @Inject constructor(
     val allTasks: StateFlow<RequestState<List<ToDoTask>>> = _allTasks
 
     init {
-        //getThemeMode()
         getAllTasks()
     }
 
@@ -197,7 +196,7 @@ class SharedViewModel @Inject constructor(
         }
     }
 
-    private fun getThemeMode() {
+    fun getThemeMode() {
         viewModelScope.launch(Dispatchers.IO) {
             appSettings.isDarkModeTheme.collect { status ->
                 isDarkTheme = status

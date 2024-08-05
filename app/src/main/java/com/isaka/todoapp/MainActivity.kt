@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(scrim = Color.TRANSPARENT)
         )
+        sharedViewModel.getThemeMode()
 
         setContent {
             ToDoAppTheme(darkTheme = sharedViewModel.isDarkTheme) {
